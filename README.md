@@ -1,55 +1,57 @@
-# Channel Wars — TV Station Management Simulator
+# Channel Wars 📺
 
-**Channel Wars** is a detailed, original, offline, single-HTML TV network management game inspired by classic broadcast tycoon games.
-
-> **GitHub About description (copy to repository settings):**
-> An offline, single-file TV station tycoon for iPad and desktop. Schedule shows, sell ads, outsmart rival networks, watch animated cutscenes, and customize your station and programs.
+**Channel Wars** is an original, single-file TV-station management game made for iPad, phone, and desktop browsers. Build your channel, schedule programs, attract viewers, run advertising campaigns, and compete against rival networks.
 
 ## Play
 
-- **Browser (once GitHub Pages is enabled):** https://mitchell-d00.github.io/OpenAI-TV/
-- **Offline:** Download `Channel-Wars.html` or `index.html` and open it in Safari, Chrome, or another modern browser.
-- **No installation or accounts.** The complete game, graphics, code, data and styles are bundled inside each HTML file.
+**[Play Channel Wars](https://mitchell-d00.github.io/channel-wars/)** *(available when GitHub Pages is enabled)*
 
-## Channel Wars gameplay
+Or download [`index.html`](index.html) and open it in a modern browser. The entire game—art, styling, logic, and data—is in **one HTML file**. No installation, external assets, account, or build step is needed.
 
-Manage one independent television station across an eight-room headquarters. Purchase broadcasting licenses for 32 fictional programs, build a seven-hour schedule, sign advertising contracts, commission newsroom packages, invest in upgrades, borrow money and compete against three rival channels. Follow hourly audience ratings, profits, network reputation and an expanding career record.
+## Features
 
-## New in this edition
+- **Run a TV station:** Seven nightly broadcast slots, show licensing, ratings, advertising contracts, news programming, upgrades, and loans.
+- **Outsmart rival channels:** Compete for audience share and track nightly reports.
+- **Choose your station name:** Pick a custom network name or generate one randomly.
+- **Rename the shows:** Edit the names of 32 programs individually or bulk-import a `.txt` file.
+- **Original animated cutscenes:** Illustrated scenes introduce your station and celebrate milestones. Toggle cutscenes and effects in Settings.
+- **Settings:** Station identity, light/dark mode, animations, story scenes, and show-title editor.
+- **Play offline:** The game saves locally in your browser; use the in-game export/import tools to move your save between devices.
 
-- **Channel Wars** branding throughout the game
-- Original illustrated SVG **animated story cutscenes** for the city, staff meeting, control room, ratings battle and major milestones; animations respect the reduced-motion preference
-- **Random station names** on new games, or enter your own station name in Settings
-- **Full Settings menu** with light/dark themes, animated graphics and story toggle, and introduction replay
-- **Show-name editor:** rename any or all 32 shows from within the app
-- **Text file support:** download your own `.txt` show-name file, edit it, upload it later, or reset the show titles
-- **Existing saves kept:** the previous OpenAI TV local save key is preserved and its data migrated in memory as needed
-- Touch-friendly responsive UI with no horizontal overflow at 390px testing
+## Rename shows using a text file
 
-### Upload your own show list
+Go to **⚙ Settings → TV show name editor**. Download your custom title list as a `.txt`, edit it, then upload it back into the game. You can edit titles directly in Settings, too.
 
-Open **⚙ Settings → TV show name editor**. You can edit the name list directly and press **Apply names**, or press **Save as .txt** to download a template. Modify it with any text editor, then press **Upload .txt**.
+Example:
 
 ```text
-# The left-hand show IDs must stay unchanged
 starlight = Neon House
 midnight = Mystery District
 cosmos = A Tour of the Universe
 ```
 
-You can also supply a plain list of 32 titles in catalog order (one per line). Show-name changes persist with game saves and are included in exported JSON save files.
+Keep the IDs to the left of `=` unchanged. You can rename only the shows you want. Alternatively, upload 32 titles, one per line, in the catalog's order.
+
+**Note:** The show-title `.txt` file changes only program names. Your actual game progress is exported/imported separately as JSON.
 
 ## Files
 
-- `index.html`: the entire game and GitHub Pages entrypoint
-- `Channel-Wars.html`: offline standalone with the new brand
-- `OpenAI-TV.html`: backwards-compatible filename containing the same current game
-- `LICENSE`: MIT license
+| File | Purpose |
+| --- | --- |
+| [`index.html`](index.html) | **The one and only game file** — playable offline and served by GitHub Pages |
+| [`LICENSE`](LICENSE) | MIT license |
+| `.nojekyll` | Keeps GitHub Pages deployment simple |
 
-## Name change and GitHub Pages
+There are no separate older-game or duplicate standalone HTML builds in this repository.
 
-The game has been renamed to **Channel Wars**. GitHub repository renaming and its About description must be changed in the repo settings by an administrator. Recommended repository slug: `channel-wars` (GitHub is case-insensitive). Once renamed, GitHub Pages will be expected at `https://mitchell-d00.github.io/channel-wars/` after it is configured and deployed.
+## Save compatibility
 
-## Credits
+Channel Wars continues using the earlier browser save-storage identifier to keep existing players' progress and customizations. Despite the internal compatibility identifier, this repository contains **only Channel Wars**.
 
-An original game **inspired by the TV management simulation genre**. This game does not include original *Mad TV* or TVTower artwork, game assets, or source code, and is not officially affiliated with OpenAI or Rainbow Arts.
+## Project status
+
+A browser-first, offline simulation inspired by the classic TV management genre. All shows, channel brands, dialogue, and illustrations are original. This is not a release of *Mad TV*, TVTower, or their assets, and it is not an official OpenAI product.
+
+## License
+
+MIT; see [LICENSE](LICENSE).
