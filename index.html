@@ -41,15 +41,113 @@
 @media(max-width:640px){.settings-panel{padding:12px}.settings-row{flex-direction:column;align-items:flex-start}.setting-controls{width:100%}.setting-input{min-width:0;flex:1}.cinema-visual{aspect-ratio:16/9.8}.cinema-story{padding:16px 17px 4px}.cinema-controls{padding:15px 17px 17px}.cinema-progress span{width:14px}.cinema-actions button{font-size:12px;padding:10px}}
 
 @media(max-width:640px){.masthead{min-width:0;gap:6px}.brand{gap:7px;min-width:0;flex:1}.brand>div:last-child{min-width:0}.brand h1{font-size:clamp(19px,5.2vw,25px)}.brand-icon{width:39px;height:40px;min-width:39px}.brand-icon>span{font-size:21px}.brand .eyebrow{font-size:6px;letter-spacing:.25px}.station-under-title{font-size:8px;max-width:19ch}.mast-actions{gap:3px;flex-shrink:0}.mast-actions .icon-button{width:30px;min-width:30px;height:30px;padding:4px}.tile-illustration{max-width:100%;min-width:0}.app{max-width:100%;overflow-x:clip}}
+
+/* Two-edition interface: original retro studio artwork + existing modern workbench */
+[hidden]{display:none!important}
+.cw-edition-gate{position:fixed;inset:0;z-index:90;overflow:auto;display:grid;place-items:center;background:radial-gradient(ellipse at 60% 15%,#34546b 0%,#101d31 60%,#0a1323 100%);padding:clamp(15px,4vw,40px);color:#f9f5e8}
+.cw-edition-content{width:min(1020px,100%);margin:auto}
+.cw-edition-heading{text-align:center;margin:0 0 22px}.cw-edition-overline{font:800 11px/1.5 ui-monospace,monospace;letter-spacing:3px;color:#8ddfcb}
+.cw-edition-heading h1{font:900 clamp(38px,7vw,72px)/1.05 system-ui,sans-serif;letter-spacing:-3px;color:#fff;margin:8px 0}
+.cw-edition-heading h1 em{font-style:normal;color:#ffcf83}.cw-edition-heading p{font-size:15px;color:#c4d4df;line-height:1.55}
+.cw-edition-options{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cw-edition-card{background:#1a3045;border:2px solid #5f778b;border-radius:20px;text-align:left;color:#f4f5eb;overflow:hidden;cursor:pointer;padding:0;box-shadow:0 18px 32px #0004;transition:transform .17s,border-color .17s}
+.cw-edition-card:hover,.cw-edition-card:focus-visible{transform:translateY(-4px);border-color:#f8d08b}
+.cw-edition-card .cw-edition-art{height:220px;position:relative;overflow:hidden;background:#20394c}
+.cw-edition-art svg{display:block;height:100%;width:100%}
+.cw-edition-card-body{padding:20px 22px 24px}.cw-edition-card-kicker{font:800 10px/1.2 ui-monospace,monospace;letter-spacing:2px;color:#95d6c8;text-transform:uppercase}
+.cw-edition-card strong{display:block;font:900 28px/1.15 system-ui;margin:7px 0}.cw-edition-card p{font-size:13px;line-height:1.5;color:#c3d3dc;min-height:54px}
+.cw-edition-cta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:17px;font-weight:850;font-size:13px;color:#ffda98}
+.cw-edition-footer{text-align:center;color:#b3c4d0;font-size:12px;margin-top:20px}
+.cw-edition-gate .cw-card-classic .cw-edition-art{image-rendering:pixelated}
+.cw-edition-icon{font-size:16px}
+.cw-edition-top{display:flex;gap:10px;justify-content:center;margin:0 0 12px}.cw-edition-top span{border:1px solid #668b9b;border-radius:30px;padding:5px 12px;font:800 10px ui-monospace,monospace;color:#c5e8e1}
+.cw-edition-gate .cw-edition-card:active{transform:translateY(1px)}
+.cw-edition-switch{font-size:16px}
+/* Retro edition is a distinct illustrated simulation surface; gameplay logic is shared */
+body.cw-mode-classic{--paper:#171925;--card:#bbb7ad;--white:#d1cbbc;--ink:#201b24;--muted:#625b61;--line:#67616b;--teal:#9de7cd;--coral:#e8a36b;--yellow:#eed47e;background:repeating-linear-gradient(0deg,#111323,#111323 4px,#1d2330 5px);color:#221e25;font:14px/1.4 'Courier New',ui-monospace,monospace}
+.cw-mode-classic .screen-grain{opacity:.08}
+.cw-mode-classic .app{max-width:1240px;margin:0 auto;padding:12px}
+.cw-mode-classic .masthead{background:#aeada5;border:5px ridge #d6c09b;padding:11px 16px;box-shadow:4px 5px 0 #090c14;margin:0}
+.cw-mode-classic .brand h1{font:900 31px/1 'Courier New',monospace;text-shadow:2px 2px #fff1}
+.cw-mode-classic .brand-icon{border-radius:0}
+.cw-mode-classic .eyebrow,.cw-mode-classic .station-under-title{letter-spacing:.5px;font-family:monospace}
+.cw-mode-classic .mast-actions .icon-button{border-radius:0}
+.cw-mode-classic .ticker{border-radius:0;background:#363f4b;color:#faecd3;margin-top:10px;border:3px solid #b77c50;box-shadow:3px 3px 0 #080c16}
+.cw-mode-classic .hud{gap:7px;margin:9px 0}
+.cw-mode-classic .hud-card{background:#bfb9af;border:3px outset #ebe1d2;border-radius:0;min-height:65px;box-shadow:2px 2px #15131a}
+.cw-mode-classic .hud-card small{font-family:monospace;letter-spacing:0}.cw-mode-classic .hud-card strong{font-family:monospace}
+.cw-mode-classic .workspace{grid-template-columns:minmax(0,1fr) 362px;gap:9px}
+.cw-mode-classic .tower{display:none}
+.cw-mode-classic .room,.cw-mode-classic .schedule,.cw-mode-classic .bottom-dock{border:5px ridge #d8af70;border-radius:0;background:#bab6a7;box-shadow:4px 5px 0 #090c14}
+.cw-mode-classic .room h2,.cw-mode-classic .schedule h2{font-family:monospace;letter-spacing:-1px}
+.cw-mode-classic .room .list-card,.cw-mode-classic .catalog-card,.cw-mode-classic .choice-card,.cw-mode-classic .tile-illustration,.cw-mode-classic .insight-box,.cw-mode-classic .story-card,.cw-mode-classic .rival-card,.cw-mode-classic .empty-card{border-radius:0;background:#d4d0c6;border:2px solid #7c7771;box-shadow:2px 2px 0 #86775d}
+.cw-mode-classic .action-btn,.cw-mode-classic .slot-btn,.cw-mode-classic .mini-button,.cw-mode-classic .ghost-link{border-radius:0;font-family:monospace}
+.cw-mode-classic .bottom-dock{padding:12px;margin:10px 0}
+.cw-mode-classic .panel{overflow-wrap:anywhere}
+.cw-mode-classic .room-icon{border-radius:0}.cw-mode-classic .schedule .slot{border-radius:0}
+.cw-mode-classic .cw-retro-scene{display:block}
+.cw-retro-scene{display:none;background:#161c30;border:5px ridge #e4b073;box-shadow:4px 5px #090a12;color:#f4ead3;margin-top:10px;overflow:hidden}
+.cw-retro-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;background:#343749;border-bottom:3px solid #bc8754;font:900 12px/1.3 ui-monospace,monospace;letter-spacing:1px}
+.cw-retro-toolbar button{background:#617789;border:2px outset #afc2c8;color:white;padding:6px 10px;font:800 11px ui-monospace,monospace;min-height:34px}
+.cw-retro-mid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(250px,1fr);gap:0;min-height:315px}
+.cw-retro-canvas{background:#171d2c;min-width:0;position:relative;overflow:hidden;border-right:4px ridge #c58c5d}
+.cw-retro-canvas svg{display:block;width:100%;height:auto;aspect-ratio:900/425;image-rendering:pixelated}
+.cw-retro-person{background:linear-gradient(#253a49,#3d3e46);padding:12px;display:flex;flex-direction:column;gap:7px}
+.cw-retro-portrait{height:125px;overflow:hidden;border:3px inset #cda06c;background:#4b6170;text-align:center}
+.cw-retro-portrait svg{max-height:145px;height:100%;width:100%}
+.cw-retro-person b{font-size:14px;color:#f2d18b}.cw-retro-person p{font:13px/1.5 ui-monospace,monospace;color:#f2f0df;margin:0;flex:1}
+.cw-retro-person .cw-action-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.cw-retro-person button,.cw-retro-floorlist button{border:2px outset #d8c6a8;background:#c0b7a3;padding:7px;color:#23202a;font:800 11px/1.2 monospace;min-height:38px}
+.cw-retro-floorlist{background:#262738;border-top:3px solid #bb8a55;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;padding:6px}
+.cw-retro-floorlist button{background:#455366;color:#f9f4df;font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-color:#869eb0}
+.cw-retro-floorlist button.active{background:#fac97c;color:#1d2130;border-color:#fbe2ab}
+.cw-retro-status{background:#665e5d;color:#fff5d8;border-top:3px solid #a98258;padding:7px 12px;display:flex;justify-content:space-between;gap:10px;font:800 11px ui-monospace,monospace}
+.cw-mode-classic .modal,.cw-mode-classic .drawer{border:4px ridge #dab47d;border-radius:0}
+.cw-mode-classic .settings-panel{border-radius:0}
+@media(max-width:1050px){.cw-mode-classic .workspace{grid-template-columns:minmax(0,1fr)}.cw-mode-classic .schedule{grid-column:1}.cw-mode-classic .schedule #scheduleRows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}}
+@media(max-width:700px){.cw-edition-options{grid-template-columns:1fr}.cw-edition-card .cw-edition-art{height:140px}.cw-edition-card p{min-height:0}.cw-edition-card-body{padding:12px 15px 16px}.cw-edition-card strong{font-size:22px}.cw-edition-heading h1{font-size:42px}.cw-edition-heading{margin-bottom:15px}.cw-edition-gate{padding:14px}.cw-retro-mid{grid-template-columns:1fr}.cw-retro-canvas{border-right:0;border-bottom:4px ridge #c58c5d}.cw-retro-canvas svg{aspect-ratio:900/360}.cw-retro-person{display:grid;grid-template-columns:80px 1fr;grid-template-rows:auto auto auto;gap:5px 11px;padding:9px}.cw-retro-portrait{grid-row:1/4;height:95px}.cw-retro-person b{font-size:12px}.cw-retro-person p{font-size:11px}.cw-retro-person .cw-action-row{grid-column:2}.cw-retro-floorlist{grid-template-columns:repeat(4,minmax(0,1fr))}.cw-retro-toolbar{font-size:10px;letter-spacing:0}.cw-retro-toolbar button{font-size:10px}.cw-retro-status{font-size:9px;flex-wrap:wrap}.cw-mode-classic .app{padding:5px}.cw-mode-classic .workspace{grid-template-columns:1fr}.cw-mode-classic .schedule #scheduleRows{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.cw-edition-card{transition:none}}
 </style></head>
 <body>
+
+<section class="cw-edition-gate" id="cwEditionGate" role="dialog" aria-modal="true" aria-labelledby="cwEditionTitle">
+ <div class="cw-edition-content">
+  <div class="cw-edition-heading">
+   <div class="cw-edition-top"><span>ORIGINAL TV TYCOON</span><span>OFFLINE • ALL DEVICES</span></div>
+   <div class="cw-edition-overline">WELCOME TO THE AIRWAVES</div>
+   <h1 id="cwEditionTitle">CHANNEL <em>WARS</em></h1>
+   <p>One broadcasting empire. Two ways to play.<br>Choose your edition to enter the station.</p>
+  </div>
+  <div class="cw-edition-options">
+   <button class="cw-edition-card cw-card-classic" data-action="edition-classic" aria-label="Start Classic Edition">
+    <div class="cw-edition-art"><svg viewBox="0 0 520 230" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Retro television tower with windows"><rect width="520" height="230" fill="#4b6c84"/><rect x="0" y="148" width="90" height="90" fill="#2b3545"/><rect x="415" y="118" width="110" height="112" fill="#2b3545"/><path d="M87 225V25H432V225" fill="#99513d" stroke="#251e2d" stroke-width="12"/><rect x="100" y="32" width="320" height="193" fill="#d5ad79"/><g fill="#77c3a3" stroke="#372d3f" stroke-width="5"><rect x="112" y="43" width="295" height="49"/><rect x="112" y="103" width="295" height="49"/><rect x="112" y="164" width="295" height="49"/></g><g fill="#986348"><rect x="160" y="52" width="45" height="40"/><rect x="281" y="112" width="45" height="40"/><rect x="161" y="171" width="45" height="41"/></g><path d="M111 95H407M111 156H407" stroke="#291d30" stroke-width="8"/><g fill="#f8d984"><rect x="241" y="59" width="11" height="13"/><rect x="344" y="112" width="13" height="11"/><rect x="236" y="177" width="12" height="16"/></g><path d="M0 226H520" stroke="#1a1d2c" stroke-width="8"/></svg></div>
+    <div class="cw-edition-card-body"><div class="cw-edition-card-kicker">1990s-inspired • Pixel aesthetic</div><strong>Classic Edition</strong><p>Explore the multi-floor TV building, meet station characters and manage shows in a chunky retro interface.</p><div class="cw-edition-cta">ENTER CLASSIC STATION <span aria-hidden="true">→</span></div></div>
+   </button>
+   <button class="cw-edition-card cw-card-modern" data-action="edition-modern" aria-label="Start Modern Edition">
+    <div class="cw-edition-art"><svg viewBox="0 0 520 230" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Modern station scheduling dashboard"><rect width="520" height="230" fill="#c1d9d7"/><rect x="34" y="20" rx="15" width="452" height="194" fill="#f9f7ee"/><rect x="34" y="20" rx="15" width="452" height="36" fill="#244e55"/><circle cx="53" cy="38" r="6" fill="#92e6c5"/><rect x="74" y="33" width="146" height="10" rx="5" fill="#d7e7de"/><rect x="51" y="70" width="90" height="125" rx="6" fill="#ced8cd"/><g fill="#398275"><rect x="60" y="81" rx="3" width="70" height="16"/><rect x="60" y="105" rx="3" width="70" height="16"/><rect x="60" y="129" rx="3" width="70" height="16"/></g><rect x="153" y="70" width="210" height="125" rx="8" fill="#e6e9e1"/><rect x="166" y="83" rx="4" width="184" height="52" fill="#244e55"/><path d="M172 124 205 105 227 112 261 91 299 101 338 89" stroke="#9ee2c6" stroke-width="5" fill="none"/><g fill="#ddae70"><rect x="170" y="150" width="52" height="10" rx="3"/><rect x="234" y="150" width="52" height="10" rx="3"/><rect x="298" y="150" width="52" height="10" rx="3"/></g><rect x="376" y="71" rx="7" width="91" height="124" fill="#d5dedc"/><g fill="#52a595"><rect x="386" y="82" rx="3" width="71" height="21"/><rect x="386" y="110" rx="3" width="71" height="21"/><rect x="386" y="138" rx="3" width="71" height="21"/></g></svg></div>
+    <div class="cw-edition-card-body"><div class="cw-edition-card-kicker">Polished • Touch-first</div><strong>Modern Edition</strong><p>Your current Channel Wars interface: responsive scheduling, colorful analytics, streamlined rooms and cinematics.</p><div class="cw-edition-cta">ENTER MODERN STATION <span aria-hidden="true">→</span></div></div>
+   </button>
+  </div>
+  <p class="cw-edition-footer">Both editions share your station, show licenses, contracts, custom names, and saved progress. Change editions anytime in Settings.</p>
+ </div>
+</section>
 <div class="screen-grain" aria-hidden="true"></div>
 <div class="app">
  <header class="masthead">
    <div class="brand"><div class="brand-icon" aria-hidden="true"><div class="logo-antenna"></div><span>tv</span><i class="logo-dot"></i></div><div><div class="eyebrow">THE INDEPENDENT BROADCAST SIMULATOR</div><h1>Channel <em>Wars</em><span class="brand-spark">✦</span></h1><div class="station-under-title" id="brandStation">YOUR STATION</div></div></div>
-   <div class="mast-actions"><div class="live-badge"><span class="pulse-dot"></span><b id="statusWord">ON THE AIR</b></div><button class="icon-button" id="settingsBtn" title="Customize your game" aria-label="Game settings">⚙</button><button class="icon-button" id="helpBtn" title="How to play" aria-label="How to play">?</button><button class="icon-button" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">☾</button><button class="icon-button" id="saveBtn" title="Save your game" aria-label="Save your game">↧</button></div>
+   <div class="mast-actions"><div class="live-badge"><span class="pulse-dot"></span><b id="statusWord">ON THE AIR</b></div><button class="icon-button cw-edition-switch" id="changeEditionBtn" title="Choose Classic or Modern" aria-label="Switch game edition">◈</button><button class="icon-button" id="settingsBtn" title="Customize your game" aria-label="Game settings">⚙</button><button class="icon-button" id="helpBtn" title="How to play" aria-label="How to play">?</button><button class="icon-button" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">☾</button><button class="icon-button" id="saveBtn" title="Save your game" aria-label="Save your game">↧</button></div>
  </header>
  <section class="ticker" aria-label="News ticker"><span class="ticker-label">BROADCAST BULLETIN</span><div id="tickerText">Welcome to Channel Wars. Make your mark on the airwaves.</div><div class="ticker-date" id="tickerDate">DAY 01</div></section>
+
+<section class="cw-retro-scene" id="cwRetroScene" aria-label="Classic Edition illustrated station">
+ <div class="cw-retro-toolbar"><span id="cwRetroTitle">THE BROADCAST HOUSE</span><span><button data-action="retro-building">▤ STATION MAP</button> <button data-action="show-edition">⇄ STYLE</button></span></div>
+ <div class="cw-retro-mid">
+  <div class="cw-retro-canvas" id="cwRetroCanvas" aria-label="Retro station scene"></div>
+  <div class="cw-retro-person"><div class="cw-retro-portrait" id="cwRetroPortrait"></div><b id="cwRetroNpc">THE FRONT DESK</b><p id="cwRetroSpeech">Welcome to your station.</p><div class="cw-action-row"><button data-action="retro-talk">TALK</button><button data-action="retro-building">FLOORS</button></div></div>
+ </div>
+ <div class="cw-retro-floorlist" id="cwRetroFloors" aria-label="Visit station floors"></div>
+ <div class="cw-retro-status"><span id="cwRetroStatus">STATION READY</span><span>▲ CHANNEL WARS • CLASSIC EDITION ▼</span></div>
+</section>
  <div class="hud">
     <div class="hud-card money"><span class="hud-icon">✳</span><div><small>AVAILABLE FUNDS</small><strong id="hudCash">$120,000</strong></div></div>
     <div class="hud-card"><span class="hud-icon">◉</span><div><small>NETWORK REPUTATION</small><strong id="hudRep">25 <span class="unit">/ 100</span></strong></div></div>
@@ -148,13 +246,13 @@ const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(G));return true}catc
 let idCounter=0;const seedFn=()=>((Date.now() ^ Math.floor(Math.random()*2147483647))>>>0)||123456;
 function generateContracts(g,count=3){for(let i=0;i<count;i++){let arche=[['Local',1,22000,7000],['Regional',2,65000,17000],['National',3,115000,36000],['Prestige',3,195000,59000]][Math.min(3,Math.floor(g.day/5)+Math.floor(Math.random()*2))];let i2=(g.idseq||0)+1;g.idseq=i2;let genre=Object.keys(GENRES)[Math.floor(Math.random()*Object.keys(GENRES).length)];let names=['Comet Coffee','Brightline Bikes','North Coast Travel','Greenwich Grocers','Orbit Phones','Pine Ridge Bank','Skyway Trains','Jupiter Sneakers','Sunrise Cereal','Paper Lantern Books','City Museum','Evergreen Solar'];let sponsor=names[i2%names.length];let need=arche[1]+(i2%2), reach=arche[2], payment=arche[3]+(i2%3)*3200;
  g.offers.push({id:'ad'+i2,name:sponsor,genre,need,min:reach,pay:payment,deadline:g.day+4+(i2%4),penalty:Math.round(payment*.38),icon:['☕','🚲','🧳','🥬','📱','🏦','🚉','👟','🥣','📚','🏛️','☀️'][i2%12]});}}
-function newGame(seed=seedFn()){let g={version:VERSION,seed,stationName:stationNameFromSeed(seed),showNames:{},day:1,slot:0,cash:128000,loan:0,rep:25,reach:280000,up:{antenna:0,studio:0,research:0},owned:{},schedule:Array.from({length:7},()=>({show:null,part:0,ad:null})),contracts:[],offers:[],adSeq:0,idseq:0,history:[],log:[],news:'local',newsUsed:false,marketing:0,totals:{revenue:0,cost:0,viewers:0,hours:0,contracts:0},events:[],achieved:[],room:'desk',dayResults:[],lastReport:null,flags:{tutorial:false,dark:false,cutscenes:true,motion:true},lastComplete:0};
+function newGame(seed=seedFn()){let g={version:VERSION,seed,stationName:stationNameFromSeed(seed),showNames:{},day:1,slot:0,cash:128000,loan:0,rep:25,reach:280000,up:{antenna:0,studio:0,research:0},owned:{},schedule:Array.from({length:7},()=>({show:null,part:0,ad:null})),contracts:[],offers:[],adSeq:0,idseq:0,history:[],log:[],news:'local',newsUsed:false,marketing:0,totals:{revenue:0,cost:0,viewers:0,hours:0,contracts:0},events:[],achieved:[],room:'desk',dayResults:[],lastReport:null,flags:{tutorial:false,dark:false,cutscenes:true,motion:true,edition:'modern'},lastComplete:0};
  for(let [id,runs] of [['pulse',8],['giggle',6],['trail',4],['sketch',7],['tiny',5]])g.owned[id]={runs,airings:0};
  generateContracts(g,5);g.events=[EVENTS[(seed+g.day*7)%EVENTS.length]];g.log=[`DAY 1 • You inherited a small independent TV station. It’s time to make history.`];return g}
 let G;try{G=JSON.parse($saved());if(!G||G.version!==VERSION||!Array.isArray(G.schedule)||!G.owned)throw Error('save');}catch{G=newGame()}
 G.stationName=typeof G.stationName==='string'&&G.stationName.trim()?G.stationName.slice(0,34):stationNameFromSeed(G.seed||123456);
 G.showNames=G.showNames&&typeof G.showNames==='object'&&!Array.isArray(G.showNames)?G.showNames:{};
-G.flags??={};if(typeof G.flags.cutscenes!=='boolean')G.flags.cutscenes=true;if(typeof G.flags.motion!=='boolean')G.flags.motion=true;
+G.flags??={};if(!['modern','classic'].includes(G.flags.edition))G.flags.edition='modern';if(typeof G.flags.cutscenes!=='boolean')G.flags.cutscenes=true;if(typeof G.flags.motion!=='boolean')G.flags.motion=true;
 applyShowNames();
  let activeRoom=G.room||'desk',running=false,ticker=0,drawer=null,modal=null,search='',genreFilter='all',offerSort='recommended',sound=false;
 const seeded=(salt)=>{let x=(((G.seed+salt*2654435761)>>>0) ^ (G.day*1597334677))>>>0;x=Math.imul(x^(x>>>16),0x7feb352d);x=Math.imul(x^(x>>>15),0x846ca68b);return ((x^(x>>>16))>>>0)/4294967296};
@@ -177,6 +275,73 @@ function reachPreview(sh,idx){let slot=SLOTS[idx],trendBonus=trend().genre===sh.
 function contractedEarnEstimate(ad){return `${money(ad.pay)} on ${ad.need} qualified spots`}
 function ratingColor(s){return s>=80?'var(--teal)':s>=65?'var(--yellow)':'var(--coral)'}
 function tierText(v){return v>=87?'Blockbuster':v>=75?'Premium':v>=60?'Reliable':'Budget'}
+
+/* Single game engine, two player-selectable visual editions */
+let classicShowBuilding=true;
+const RETRO_CAST={
+ desk:['Rina Bell','Station Director','Every empire begins with one small transmitter.','#e2ae88','#975967','#2a3241'],
+ studio:['Sol Rivera','Studio Manager','Seven hours to broadcast. Make every minute count.','#b9856b','#47858f','#282d3a'],
+ rights:['Niko Vale','Film Dealer','Great shows make great stations. Pick your next hit.','#dfab87','#706d93','#504139'],
+ ads:['Piper Chen','Advertising Agent','The viewers are there. Let us find the right sponsor.','#e1b192','#bd7857','#2a2f41'],
+ news:['Avery Cross','News Editor','Today’s story might become tomorrow’s headline.','#9c6b56','#6083a2','#303341'],
+ marketing:['Imani Reed','Chief Engineer','A bigger antenna. A stronger signal. More viewers.','#a16a51','#688b68','#222637'],
+ rivals:['Dex Novak','Competition Analyst','Keep one eye on the rival schedules.','#dca986','#7c6586','#4e3b32'],
+ finance:['Mister Sterling','Banker','A dollar saved is a dollar for another show.','#d9a58c','#746e83','#494146']
+};
+function cwRetroFace(id){
+ const c=RETRO_CAST[id]||RETRO_CAST.desk;
+ return '<svg viewBox="0 0 180 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Retro character portrait"><rect width="180" height="170" fill="#445b71"/><path d="M0 170Q13 115 73 120L118 120Q169 123 180 170" fill="'+c[4]+'" stroke="#2b2939" stroke-width="7"/><rect x="74" y="109" width="34" height="24" fill="'+c[3]+'"/><rect x="48" y="43" width="86" height="83" rx="30" fill="'+c[3]+'" stroke="#38303e" stroke-width="6"/><path d="M48 82Q35 23 87 17Q139 18 136 82L112 52 89 59 54 79Z" fill="'+c[5]+'"/><rect x="67" y="83" width="9" height="6" fill="#28303c"/><rect x="106" y="83" width="9" height="6" fill="#28303c"/><path d="M71 108Q92 120 113 108" stroke="#895245" fill="none" stroke-width="4"/></svg>';
+}
+function cwRetroBuilding(){
+ let svg='<svg viewBox="0 0 900 425" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Retro eight floor television station"><rect width="900" height="425" fill="#9bcbdc"/><path d="M0 420V216H60V280H120V155H172V425M724 425V245H783V176H833V273H898V425" fill="#4e5c69"/><rect x="177" y="22" width="555" height="389" fill="#914b41" stroke="#362938" stroke-width="10"/>';
+ for(let i=0;i<8;i++){let f=FLOORS[i],y=43+i*44;
+ svg+='<g data-room="'+f.id+'" style="cursor:pointer" role="button" tabindex="0" aria-label="Visit '+safe(f.title)+'"><rect x="195" y="'+y+'" width="515" height="40" fill="'+(activeRoom===f.id?'#f3d69a':['#89c4b3','#9aceb4','#8ec1ce'][i%3])+'" stroke="#40353d" stroke-width="4"/><rect x="209" y="'+(y+4)+'" width="47" height="33" fill="#8c5746" stroke="#3a2e3d" stroke-width="4"/><rect x="278" y="'+(y+5)+'" width="54" height="30" fill="#376277" stroke="#3c3645" stroke-width="5"/><rect x="350" y="'+(y+8)+'" width="93" height="23" fill="#9e7660" stroke="#44353d" stroke-width="4"/><rect x="471" y="'+(y+4)+'" width="46" height="32" fill="#815642" stroke="#3c3442" stroke-width="4"/><rect x="572" y="'+(y+7)+'" width="89" height="27" fill="#42766f" stroke="#3c3442" stroke-width="4"/><text x="180" y="'+(y+26)+'" font-size="21" text-anchor="middle" font-family="monospace" font-weight="900" fill="#f3d49b">'+(8-i)+'</text>'+(activeRoom===f.id?'<path d="M671 '+(y+10)+'l17 10 -17 11Z" fill="#ec755f"/>':'')+'</g>';
+ }
+ return svg+'<path d="M0 415H900" stroke="#3c2c36" stroke-width="19"/><path d="M465 21V0" stroke="#23283a" stroke-width="7"/></svg>';
+}
+function cwRetroRoom(id){
+ const c=RETRO_CAST[id]||RETRO_CAST.desk;
+ const accents=['#92b8ac','#7ba9ba','#baaf9d','#ba9d8b','#81b5bb','#92bcaa','#aaa0bb','#a9b5ad'];
+ const index=Math.max(0,FLOORS.findIndex(f=>f.id===id));
+ const center={
+ desk:'<rect x="345" y="109" width="220" height="133" fill="#765a5e" stroke="#d8bf8b" stroke-width="9"/><text x="454" y="175" font-size="28" font-family="monospace" text-anchor="middle" fill="#ffe29b">ON AIR</text>',
+ studio:'<rect x="345" y="110" width="215" height="133" fill="#273c50" stroke="#d6b98b" stroke-width="9"/><rect x="360" y="122" width="184" height="102" fill="#3e7c82"/><path d="M370 203l38 -48 34 17 41 -40 44 22" stroke="#a3e6ca" fill="none" stroke-width="8"/>',
+ rights:'<g>'+Array.from({length:5},(_,i)=>'<rect x="'+(347+i*43)+'" y="94" width="36" height="148" fill="'+['#657a8b','#996d63','#688c6a','#b58d60','#94799a'][i]+'" stroke="#373440" stroke-width="5"/>').join('')+'</g>',
+ ads:'<rect x="347" y="110" width="209" height="132" fill="#e5d3af" stroke="#947a69" stroke-width="9"/><text x="451" y="168" font-size="26" font-family="monospace" text-anchor="middle" fill="#ad5a58">SPONSORS</text>',
+ news:'<rect x="347" y="109" width="212" height="135" fill="#2a4055" stroke="#cab88c" stroke-width="8"/><text x="453" y="180" font-size="41" font-family="monospace" text-anchor="middle" fill="#b5dcca">NEWS</text>',
+ marketing:'<path d="M448 238V91M408 137l40 -45 41 45" stroke="#364858" stroke-width="12" fill="none"/><path d="M368 156q80 -98 162 0" stroke="#f2d78d" stroke-width="9" fill="none"/>',
+ rivals:'<rect x="343" y="104" width="211" height="141" fill="#e8ddbf" stroke="#846d7b" stroke-width="9"/><path d="M359 230l53 -56 32 16 47 -52 46 20" stroke="#ae6669" stroke-width="8" fill="none"/>',
+ finance:'<rect x="347" y="109" width="217" height="145" fill="#587985" stroke="#dabd94" stroke-width="9"/><circle cx="456" cy="183" r="50" stroke="#ecddbd" stroke-width="10" fill="#82a0a4"/><path d="M414 183h85M456 143v80" stroke="#dfe9d4" stroke-width="9"/>'
+ };
+ return '<svg viewBox="0 0 900 425" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Original illustrated station room"><rect width="900" height="425" fill="'+accents[index]+'"/><rect y="300" width="900" height="125" fill="#907359"/><rect x="35" y="36" width="263" height="200" fill="#334457" stroke="#dfbb90" stroke-width="13"/><rect x="54" y="51" width="225" height="169" fill="#91c7da"/><path d="M54 218v-35h45v-48h45v46h51v-80h51v117Z" fill="#576b7b"/>'+(center[id]||center.desk)+'<path d="M572 328q6 -76 48 -96h74q43 25 49 96" fill="'+c[4]+'" stroke="#343242" stroke-width="9"/><rect x="647" y="208" width="34" height="34" fill="'+c[3]+'"/><rect x="621" y="120" width="84" height="95" rx="30" fill="'+c[3]+'" stroke="#343242" stroke-width="6"/><path d="M617 166q-8 -62 46 -64q45 -2 48 65L681 138L651 144Z" fill="'+c[5]+'"/><rect x="642" y="172" width="8" height="5" fill="#282f3e"/><rect x="683" y="172" width="8" height="5" fill="#282f3e"/><path d="M652 196q18 13 36 0" stroke="#88594a" stroke-width="4" fill="none"/><path d="M194 339H758L800 424H146Z" fill="#785456" stroke="#3c2d3e" stroke-width="9"/><path d="M200 337H750" stroke="#d6b17f" stroke-width="17"/><text x="26" y="395" font-family="monospace" font-weight="900" font-size="22" fill="#ffe6ac" stroke="#2c3647" stroke-width="3" paint-order="stroke">'+safe(FLOORS[index].title.toUpperCase())+'</text></svg>';
+}
+function renderClassic(){
+ const classic=G.flags.edition==='classic';document.body.classList.toggle('cw-mode-classic',classic);
+ const el=$('cwRetroScene');if(!el)return;el.hidden=!classic;if(!classic)return;
+ const c=RETRO_CAST[activeRoom]||RETRO_CAST.desk;
+ $('cwRetroCanvas').innerHTML=classicShowBuilding?cwRetroBuilding():cwRetroRoom(activeRoom);
+ $('cwRetroTitle').textContent=classicShowBuilding?'THE BROADCAST HOUSE / EIGHT FLOORS':FLOORS.find(f=>f.id===activeRoom).title.toUpperCase();
+ $('cwRetroPortrait').innerHTML=cwRetroFace(activeRoom);$('cwRetroNpc').textContent=c[0]+' · '+c[1];$('cwRetroSpeech').textContent=c[2];
+ $('cwRetroFloors').innerHTML=FLOORS.map(f=>'<button data-room="'+f.id+'" class="'+(activeRoom===f.id&&!classicShowBuilding?'active':'')+'">'+f.floor+' '+f.icon+'</button>').join('');
+ $('cwRetroStatus').textContent='DAY '+G.day+' / '+String(HOURS[G.slot]??24).padStart(2,'0')+':00 / '+G.stationName.toUpperCase()+' / '+money(G.cash);
+}
+function retroTalk(){
+ const c=RETRO_CAST[activeRoom]||RETRO_CAST.desk;
+ const destinations={desk:['studio','rights'],studio:['rights','ads'],rights:['studio','ads'],ads:['studio','desk'],news:['studio','finance'],marketing:['rights','finance'],rivals:['studio','marketing'],finance:['marketing','desk']}[activeRoom];
+ showModal('Conversation at the station','<div style="display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:center"><div style="border:4px ridge #cfa579;background:#466277">'+cwRetroFace(activeRoom)+'</div><div><b>'+safe(c[0])+' — '+safe(c[1])+'</b><p style="margin-top:10px">'+safe(c[2])+'</p></div></div><div class="room-actions" style="margin-top:16px">'+destinations.map(k=>go('Visit '+FLOORS.find(f=>f.id===k).title,k)).join('')+button('Close','close-modal','secondary')+'</div>');
+}
+function showEditionGate(){
+ if(running){toast('Finish your broadcast before switching editions.','error');return}
+ if(sceneFlow)sceneFlow=null;closeModal();closeDrawer();$('cwEditionGate').hidden=false;
+}
+function chooseEdition(edition){
+ if(!['classic','modern'].includes(edition))return;
+ $('cwEditionGate').hidden=true;G.flags.edition=edition;classicShowBuilding=edition==='classic';
+ const first=!G.flags.tutorial;if(first)G.flags.tutorial=true;
+ save();render();
+ if(first){if(edition==='modern'&&G.flags.cutscenes)setTimeout(()=>openCutscene('intro',help),150);else if(edition==='modern')setTimeout(help,150);else setTimeout(retroTalk,150)}
+}
+
 function render(){document.documentElement.dataset.theme=G.flags?.dark?'dark':'light';document.documentElement.dataset.motion=G.flags?.motion?'on':'off';
  $('brandStation').textContent='YOUR STATION • '+G.stationName.toUpperCase();$('legendYou').textContent=G.stationName;
  $('hudCash').textContent=money(G.cash);$('hudRep').innerHTML=`${Math.floor(G.rep)} <span class="unit">/ 100</span>`;$('hudReach').innerHTML=`${num(G.reach)} <span class="unit">homes</span>`;$('hudTime').innerHTML=`${String((HOURS[G.slot]??24)%24).padStart(2,'0')}:00 <span class="unit">Day ${G.day}</span>`;
@@ -186,7 +351,7 @@ function render(){document.documentElement.dataset.theme=G.flags?.dark?'dark':'l
  $('careerLabel').textContent=Math.floor(G.rep)+'%';$('careerBar').style.width=Math.floor(G.rep)+'%';
  $('nextHourBtn').disabled=running;$('playBtn').disabled=running;$('clearFutureBtn').disabled=running;
  $('playBtn').textContent=running?'● BROADCASTING':'▶ GO LIVE';$('dayProgressText').textContent=`${G.slot} / 7 broadcast hours · Day ${G.day}`;
- renderFloors();renderSchedule();renderRoom();renderChart();renderLog();}
+ renderFloors();renderSchedule();renderRoom();renderChart();renderLog();renderClassic();}
 function renderFloors(){$('towerNav').innerHTML=FLOORS.map(f=>`<button class="floor ${activeRoom===f.id?'active':''}" data-room="${f.id}" aria-pressed="${activeRoom===f.id}"><span class="floor-number">${f.floor}</span><span class="floor-scene">${f.icon}</span><span class="floor-copy"><b>${f.title}</b><small>${f.tiny}</small></span>${activeRoom===f.id?'<span class="you-are-here">● HERE</span>':''}</button>`).join('')}
 function slotShow(i){let s=G.schedule[i];return s.show?showBy(s.show):null}
 function renderSchedule(){ $('scheduleRows').innerHTML=G.schedule.map((s,i)=>{let sh=slotShow(i),ad=adBy(s.ad),done=i<G.slot,isNow=i===G.slot;return `<div class="slot ${done?'slot-done':''} ${isNow?'slot-air':''}"><div class="slot-hour"><b>${String(HOURS[i]).padStart(2,'0')}:00</b><small>${SLOTS[i].label}</small></div><button class="slot-btn ${sh?'filled':''} ${s.part?'spanned':''}" data-action="pick-show" data-i="${i}" ${done||running?'disabled':''} title="Schedule programming"><span class="slot-name">${sh?sh.emoji+' '+safe(sh.title)+(s.part?' · II':''):'＋ Add show'}</span><span class="slot-type">${sh?GENRES[sh.genre][0]+(sh.length>1?' · '+sh.length+'h film':''):'Choose a programme'}</span></button><button class="slot-btn ${ad?'filled':''}" data-action="pick-ad" data-i="${i}" ${done||running?'disabled':''} title="Schedule advertisement"><span class="slot-name">${ad?ad.icon+' '+safe(ad.name):'＋ Sell ad'}</span><span class="slot-type">${ad?`${num(ad.min)}+ viewers`:'Pick contract / house ad'}</span></button></div>`}).join('') }
@@ -236,7 +401,7 @@ function roomFinance(){let last=G.lastReport,summary=G.history.slice(-7);return 
  <div class="section-miniheading">CAREER ACHIEVEMENTS (${G.achieved.length}/${ACHIEVEMENTS.length})</div><div class="cards">${ACHIEVEMENTS.map(a=>`<div class="list-card ${G.achieved.includes(a.id)?'chosen':'locked'}"><div class="list-card-top"><span style="font-size:26px">${a.icon}</span><div><b>${a.name}</b><small>${a.desc}</small></div><strong>${G.achieved.includes(a.id)?'✓':'🔒'}</strong></div></div>`).join('')}</div>
  <div class="room-actions">${button('⚙ Game settings','settings')}${button('↺ New game / reset','new-game','secondary')}${button('❔ Rules & credits','help','secondary')}</div>${last?`<div class="news-brief"><b>LAST REPORT</b> ${safe(last.grade)} — Day ${last.day}: ${pct(last.avgShare)} share and ${money(last.net)} net.</div>`:''}`}
 function renderRoom(){let content={desk:roomDesk,studio:roomStudio,rights:roomRights,ads:roomAds,news:roomNews,marketing:roomMarketing,rivals:roomRivals,finance:roomFinance}[activeRoom];G.room=activeRoom;$('roomBody').innerHTML=content?content():roomDesk()}
-function nav(id){if(!FLOORS.some(f=>f.id===id))return;activeRoom=id;search='';genreFilter='all';render();$('room').scrollTop=0;}
+function nav(id){if(!FLOORS.some(f=>f.id===id))return;classicShowBuilding=false;activeRoom=id;search='';genreFilter='all';render();$('room').scrollTop=0;}
 function showModal(title,html,actions='',cls='') {modal={title,html,actions,cls};$('modalRoot').innerHTML=`<div class="modal-backdrop"><div class="modal-wrap"><section class="modal ${cls}" role="dialog" aria-modal="true" aria-label="${safe(title)}"><div class="modal-header"><div><span class="kicker">CHANNEL WARS / STATION MANAGEMENT</span><h2>${title}</h2></div><button class="close" data-action="close-modal" aria-label="Close">×</button></div>${html}${actions?`<div class="modal-actions">${actions}</div>`:''}</section></div></div>`}
 function closeModal(){modal=null;$('modalRoot').innerHTML=''}
 function showDrawer(title,html){drawer={title};$('drawerRoot').innerHTML=`<div class="drawer-backdrop"><div class="drawer" role="dialog" aria-modal="true" aria-label="${safe(title)}"><div class="modal-header"><div><span class="kicker">DAILY PROGRAMME PLANNER</span><h2>${safe(title)}</h2></div><button class="close" data-action="close-drawer" aria-label="Close">×</button></div>${html}</div></div>`}
@@ -304,7 +469,7 @@ function stationRandom(){G.stationName=stationNameFromSeed(seedFn());save();rend
 function stationSave(){const name=$('stationNameField')?.value?.trim().replace(/\s+/g,' ');if(!name||name.length>34){toast('Station name must be 1–34 characters.','error');return}G.stationName=name;save();render();showSettings();toast('Station name updated.','success')}
 function showSettings(){
  const toggle=(name,desc,id,val)=>`<div class="settings-row"><div><b>${name}</b><small>${desc}</small></div><button class="settings-switch ${val?'on':''}" data-action="${id}" aria-pressed="${Boolean(val)}">${val?'ON':'OFF'}</button></div>`;
- showModal('Channel Wars • Settings',`<p class="settings-banner">Customize your broadcasting empire. Your station name and program titles are saved with your game.</p><div class="settings-list">
+ showModal('Channel Wars • Settings',`<p class="settings-banner">Customize your broadcasting empire. Your station name and program titles are saved with your game.</p><div class="settings-list"><section class="settings-panel"><h3>🎮 Game edition</h3><div class="settings-row"><div><b>Classic or Modern</b><small>Play the same save in the retro tower or polished modern dashboard.</small></div><div class="setting-controls">${button('⇄ Switch edition','show-edition','secondary')}</div></div></section>
  <section class="settings-panel"><h3>🏢 Your station</h3><div class="settings-row"><div><b>Station identity</b><small>Name your station or roll a random network name.</small></div><div class="setting-controls"><input id="stationNameField" class="setting-input" maxlength="34" aria-label="Station name" value="${safe(G.stationName)}"/>${button('Save name','save-station')}${button('🎲 Random','random-station','secondary')}</div></div></section>
  <section class="settings-panel"><h3>🎬 Graphics & experience</h3>
  ${toggle('Dark theme','Darken the interface for evening play.','setting-dark',G.flags.dark)}
@@ -356,7 +521,7 @@ function importGame(){let inp=document.createElement('input');inp.type='file';in
 function resetGame(){showModal('Start a new station?',`<p class="help-p">This will replace the current local save on this device. Export it first from the Bank if you want to keep it.</p>`,`${button('Cancel','close-modal','secondary')}${button('Start a new game','confirm-new','danger')}`)}
 function clickAction(btn){if(btn.disabled)return;let room=btn.dataset.room;if(room){nav(room);closeDrawer();closeModal();return}let action=btn.dataset.action,i=Number(btn.dataset.i),id=btn.dataset.id;
  switch(action){
- case 'settings':showSettings();break;
+ case 'edition-classic':chooseEdition('classic');break;case 'edition-modern':chooseEdition('modern');break;case 'show-edition':showEditionGate();break;case 'retro-building':classicShowBuilding=true;renderClassic();break;case 'retro-talk':retroTalk();break;case 'settings':showSettings();break;
  case 'save-station':stationSave();break;case 'random-station':stationRandom();break;
  case 'setting-dark':G.flags.dark=!G.flags.dark;save();render();showSettings();break;
  case 'setting-motion':G.flags.motion=!G.flags.motion;save();render();showSettings();break;
@@ -370,9 +535,9 @@ function clickAction(btn){if(btn.disabled)return;let room=btn.dataset.room;if(ro
  case 'close-modal':if(sceneFlow)endCutscene();else closeModal();break;case 'close-drawer':closeDrawer();break;case 'help':help();break;case 'auto-fill':autoFill();break;case 'pick-show':pickShow(i);break;case 'pick-ad':pickAd(i);break;case 'schedule-show':setShow(i,id);break;case 'schedule-ad':G.schedule[i].ad=id||null;closeDrawer();save();render();break;case 'clear-show':clearShow(i);closeDrawer();save();render();break;case 'reset-lineup':for(let k=G.slot;k<7;k++){G.schedule[k].show=null;G.schedule[k].part=0;G.schedule[k].ad=null}save();render();break;case 'buy':buy(id);break;case 'sign':sign(id);break;case 'upgrade':upgrade(id);break;case 'campaign':campaign(+id);break;case 'news':news(id);break;case 'borrow':borrow(25000);break;case 'borrow-large':borrow(75000);break;case 'repay':repay();break;case 'export':exportGame();break;case 'import':importGame();break;case 'new-game':resetGame();break;case 'confirm-new':G=newGame();applyShowNames();activeRoom='desk';closeModal();closeDrawer();save();render();G.flags.tutorial=true;save();if(G.flags.cutscenes)openCutscene('intro',help);else help();break;case 'plan-next':closeModal();nav('studio');break;case 'finance-next':closeModal();nav('finance');break;
  }}
 function bind(){document.addEventListener('click',e=>{let btn=e.target.closest('[data-room],[data-action]');if(btn){clickAction(btn);return}if(e.target.classList.contains('drawer-backdrop'))closeDrawer();if(e.target.classList.contains('modal-backdrop'))closeModal();});document.addEventListener('change',e=>{if(e.target.id==='genreFilter'){genreFilter=e.target.value;renderRoom()}});document.addEventListener('input',e=>{if(e.target.id==='searchShows'){let p=e.target.selectionStart;search=e.target.value;renderRoom();let n=$('searchShows');n?.focus();n?.setSelectionRange(p,p)}});
- $('settingsBtn').onclick=showSettings;$('helpBtn').onclick=help;$('saveBtn').onclick=()=>toast(save()?'Game saved on this device.':'Browser storage unavailable.',save()?'success':'error');$('themeBtn').onclick=()=>{G.flags.dark=!G.flags.dark;save();render()};$('nextHourBtn').onclick=()=>startBroadcast(false);$('playBtn').onclick=()=>startBroadcast(true);$('clearFutureBtn').onclick=()=>clickAction({dataset:{action:'reset-lineup'},disabled:false});$('plannerBtn').onclick=()=>nav('studio');$('resultsBtn').onclick=()=>nav('finance');document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(sceneFlow)endCutscene();else closeModal();closeDrawer()}if(e.key==='?'&&!e.ctrlKey&&!e.metaKey&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName))help()})}
-bind();render();if(!G.flags?.tutorial){G.flags??={};G.flags.tutorial=true;save();setTimeout(()=>G.flags.cutscenes?openCutscene('intro',help):help(),400)};
+ $('changeEditionBtn').onclick=showEditionGate;$('settingsBtn').onclick=showSettings;$('helpBtn').onclick=help;$('saveBtn').onclick=()=>toast(save()?'Game saved on this device.':'Browser storage unavailable.',save()?'success':'error');$('themeBtn').onclick=()=>{G.flags.dark=!G.flags.dark;save();render()};$('nextHourBtn').onclick=()=>startBroadcast(false);$('playBtn').onclick=()=>startBroadcast(true);$('clearFutureBtn').onclick=()=>clickAction({dataset:{action:'reset-lineup'},disabled:false});$('plannerBtn').onclick=()=>nav('studio');$('resultsBtn').onclick=()=>nav('finance');document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(sceneFlow)endCutscene();else closeModal();closeDrawer()}if(e.key==='?'&&!e.ctrlKey&&!e.metaKey&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName))help()})}
+bind();render();showEditionGate();
 // Read-only debug hooks for automated smoke tests and player accessibility tools.
-window.OpenAITV=window.ChannelWars={getState:()=>JSON.parse(JSON.stringify(G)),shows:SHOWS.slice(),settings:showSettings,showTitle:id=>showBy(id)?.title,stationName:()=>G.stationName,applyNameList:applyNameList,cutscene:()=>openCutscene('intro'),hour:()=>startBroadcast(false),autoFill,go:nav,reset:()=>{G=newGame(12345);activeRoom='desk';save();render()},inspect:()=>({room:activeRoom,slot:G.slot,day:G.day,cash:G.cash})};
+window.OpenAITV=window.ChannelWars={switchEdition:chooseEdition,openEditionPicker:showEditionGate,getState:()=>JSON.parse(JSON.stringify(G)),shows:SHOWS.slice(),settings:showSettings,showTitle:id=>showBy(id)?.title,stationName:()=>G.stationName,applyNameList:applyNameList,cutscene:()=>openCutscene('intro'),hour:()=>startBroadcast(false),autoFill,go:nav,reset:()=>{G=newGame(12345);activeRoom='desk';save();render()},inspect:()=>({room:activeRoom,slot:G.slot,day:G.day,cash:G.cash})};
 })();
 </script></body></html>
